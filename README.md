@@ -1,7 +1,5 @@
 # centos7-tf
-Guide to build tensorflow from source on CentOS 7
-
-Recipe to build Intel Tensorflow 2.1 with Bfloat16 support and run Resnet50 v1.5.
+## Recipe to build Intel Tensorflow 2.1 with Bfloat16 support and run Resnet50 v1.5 benchmark.<br>
 About BFloat16: https://software.intel.com/content/www/us/en/develop/download/bfloat16-hardware-numerics-definition.html
 
 (Following instructions have been tested on CentOS 7.8)
@@ -22,7 +20,7 @@ git checkout bf16/base
 ``` 
 
 I.b. Install Bazel
-| Option 1 Install latest Bazel (3.3.0 as of 06/12/2020)<br>https://docs.bazel.build/versions/master/install.html   | Option2 Install Bazel 3.0.0 |
+| Option 1 Install latest Bazel (3.2.0 as of 06/12/2020)<br>https://docs.bazel.build/versions/master/install.html   | Option2 Install Bazel 3.0.0 |
 | ------------------------------ | ---------------------------- |
 | ```wget https://copr.fedorainfracloud.org/coprs/vbatts/bazel/repo/epel-7/vbatts-bazel-epel-7.repo```<br><br>```cp vbatts-bazel-epel-7.repo /etc/yum.repos.d```<br>```install -y bazel3```<br>```vi <tensorflow/dir>/.bazelversion```<br>```##Change to 3.2.0``` | ```wget https://copr-be.cloud.fedoraproject.org/results/vbatts/bazel/srpm-builds/01330079/bazel3-3.0.0-1.fc31.src.rpm```<br><br>```rpmbuild --rebuild  bazel3-3.0.0-1.fc31.src.rpm```<br>```cd ~/rpmbuild/RPMS/x86_64```<br>```sudo yum install bazel3.x86_64 0:3.0.0-1.el7.rpm```<br>```rpm -ivh bazel3-3.0.0-1.el7.x86_64.rpm```|
 
